@@ -29,12 +29,27 @@ class ejercicio1_App {
 		e3.setConsumoEnergetico('Z');
 		e3.setColor("magenta");
 		System.out.println(e3.toString());
-		
+
 		// Comprobacion setters con valores correctos
 		e3.setColor("ROJO");
 		e3.setConsumoEnergetico('C');
 		System.out.println(e3.toString());
 
+		// Comprobacion lavadora contruct
+		Lavadora l1 = new Lavadora();
+		System.out.println(l1.toString());
+
+		// Constructor precio y peso
+		Lavadora l2 = new Lavadora(40, 18);
+		System.out.println(l2.toString());
+
+		// Constructor con todos los datos
+		Lavadora l3 = new Lavadora(50,"azul",'A',20,8);
+		System.out.println(l3.toString());
+		
+		// Constructor con todos los datos con carga de + de 30
+		Lavadora l4 = new Lavadora(50,"azul",'A',20,35);
+		System.out.println(l4.toString());
 	}
 
 }
