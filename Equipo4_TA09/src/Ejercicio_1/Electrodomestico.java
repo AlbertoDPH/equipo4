@@ -12,6 +12,6 @@ public class Electrodomestico {
 	
 	// Setters
 	
-	// Metodos
+	
 
 }
