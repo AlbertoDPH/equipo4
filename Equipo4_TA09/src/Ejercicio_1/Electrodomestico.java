@@ -5,6 +5,8 @@ class Electrodomestico {
 	// Por defecto
 	private final char[] NIVELES_CONSUMO = { 'A', 'B', 'C', 'D', 'E', 'F' };
 	private final String[] COLORES_DISPONIBLES = { "BLANCO", "NEGRO", "ROJO", "AZUL", "GRIS" };
+	private final char CONSUMO_DEFAULT = 'F';
+	private final String COLOR_DEFAULT = "BLANCO";
 
 	// Atributos
 
@@ -17,8 +19,8 @@ class Electrodomestico {
 
 	Electrodomestico() {
 		this.precioBase = 100;
-		this.color = "BLANCO";
-		this.consumoEnergetico = 'F';
+		this.color = COLOR_DEFAULT;
+		this.consumoEnergetico = CONSUMO_DEFAULT;
 		this.peso = 5;
 	}
 
@@ -31,8 +33,8 @@ class Electrodomestico {
 
 	Electrodomestico(double precio, String color, char consumo, int peso) {
 		this.precioBase = precio;
-		this.color = color;
-		this.consumoEnergetico = consumo;
+		this.color = validarColor(color);
+		this.consumoEnergetico = validarConsumo(consumo);
 		this.peso = peso;
 	}
 
@@ -66,11 +68,11 @@ class Electrodomestico {
 	}
 
 	protected void setColor(String color) {
-		this.color = color;
+		this.color = validarColor(color);
 	}
 
 	protected void setConsumoEnergetico(char consumoEnergetico) {
-		this.consumoEnergetico = consumoEnergetico;
+		this.consumoEnergetico = validarConsumo(consumoEnergetico);
 	}
 
 	protected void setPeso(int peso) {
@@ -78,5 +80,25 @@ class Electrodomestico {
 	}
 
 	// Metodos
+
+	public String validarColor(String color) {
+		color = color.toUpperCase();
+		for (int i = 0; i < COLORES_DISPONIBLES.length; i++) {
+			if (color.equals(COLORES_DISPONIBLES[i])) {
+				return color;
+			}
+		}
+		return COLOR_DEFAULT;
+	}
+
+	public char validarConsumo(char consumo) {
+		consumo = Character.toUpperCase(consumo);
+		for (int i = 0; i < NIVELES_CONSUMO.length; i++) {
+			if (Character.compare(consumo, NIVELES_CONSUMO[i]) == 0) {
+				return consumo;
+			}
+		}
+		return CONSUMO_DEFAULT;
+	}
 
 }
