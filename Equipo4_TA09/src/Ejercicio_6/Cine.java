@@ -8,6 +8,7 @@ public class Cine {
 	private String[][] asientos = new String[8][9];
 	private String teststring;
 	private Pelicula pelicula;
+	private Espectador[] espectadores;
 	private double precio;
 
 	public Cine(String teststring, Pelicula pelicula, double precio) {

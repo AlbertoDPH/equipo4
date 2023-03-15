@@ -9,8 +9,11 @@ public class Ejercicio6_App {
 		Pelicula p1 = new Pelicula("Lo que el viento se llevo", 90, 18, "Yo mismo!");
 		System.out.println(p1.toString());
 		
+		
 		Cine c1 = new Cine("Cine 1", p1, 5.99);
 		System.out.println(c1.toString());
+		
+		
 
 	}
 
