@@ -13,15 +13,18 @@ public class Espectador {
 		this.dinero = 10;
 	}
 
-	
 	public Espectador(String nombre, int edad, double dinero) {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.dinero = dinero;
 	}
 
-	
 	// Getters
+	@Override
+	public String toString() {
+		return "Espectador [nombre=" + nombre + ", edad=" + edad + ", dinero=" + dinero + "]";
+	}
+
 	public String getNombre() {
 		return nombre;
 	}
