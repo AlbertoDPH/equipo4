@@ -3,6 +3,8 @@ package Ejercicio_6;
 public class Cine {
 
 	// Atributos
+	private final char[] FILAS = { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I' };
+
 	private String[][] asientos = new String[8][9];
 	private String teststring;
 	private Pelicula pelicula;

@@ -16,21 +16,21 @@ class Electrodomestico {
 	protected int peso;
 
 	// Constructores
-	Electrodomestico() {
+	public Electrodomestico() {
 		this.precioBase = calcularPrecio(100, CONSUMO_DEFAULT, PESO_DEFAULT);
 		this.color = COLOR_DEFAULT;
 		this.consumoEnergetico = CONSUMO_DEFAULT;
 		this.peso = PESO_DEFAULT;
 	}
 
-	Electrodomestico(double precio, int peso) {
+	public Electrodomestico(double precio, int peso) {
 		this.precioBase = calcularPrecio(precio, CONSUMO_DEFAULT, peso);
 		this.color = COLOR_DEFAULT;
 		this.consumoEnergetico = CONSUMO_DEFAULT;
 		this.peso = peso;
 	}
 
-	Electrodomestico(double precio, String color, char consumo, int peso) {
+	public Electrodomestico(double precio, String color, char consumo, int peso) {
 		this.precioBase = calcularPrecio(precio, validarConsumo(consumo), peso);
 		this.color = validarColor(color);
 		this.consumoEnergetico = validarConsumo(consumo);
@@ -44,36 +44,36 @@ class Electrodomestico {
 				+ consumoEnergetico + ", peso=" + peso + "]";
 	}
 
-	protected double getPrecioBase() {
+	public double getPrecioBase() {
 		return precioBase;
 	}
 
-	protected String getColor() {
+	public String getColor() {
 		return color;
 	}
 
-	protected char getConsumoEnergetico() {
+	public char getConsumoEnergetico() {
 		return consumoEnergetico;
 	}
 
-	protected int getPeso() {
+	public int getPeso() {
 		return peso;
 	}
 
 	// Setters
-	protected void setPrecioBase(double precioBase) {
+	public void setPrecioBase(double precioBase) {
 		this.precioBase = precioBase;
 	}
 
-	protected void setColor(String color) {
+	public void setColor(String color) {
 		this.color = validarColor(color);
 	}
 
-	protected void setConsumoEnergetico(char consumoEnergetico) {
+	public void setConsumoEnergetico(char consumoEnergetico) {
 		this.consumoEnergetico = validarConsumo(consumoEnergetico);
 	}
 
-	protected void setPeso(int peso) {
+	public void setPeso(int peso) {
 		this.peso = peso;
 	}
 
