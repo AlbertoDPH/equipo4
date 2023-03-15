@@ -7,6 +7,7 @@ class Electrodomestico {
 	private final String[] COLORES_DISPONIBLES = { "BLANCO", "NEGRO", "ROJO", "AZUL", "GRIS" };
 	private final char CONSUMO_DEFAULT = 'F';
 	private final String COLOR_DEFAULT = "BLANCO";
+	private final int PESO_DEFAULT = 5;
 
 	// Atributos
 	protected double precioBase;
@@ -16,21 +17,21 @@ class Electrodomestico {
 
 	// Constructores
 	Electrodomestico() {
-		this.precioBase = 100;
+		this.precioBase = calcularPrecio(100, CONSUMO_DEFAULT, PESO_DEFAULT);
 		this.color = COLOR_DEFAULT;
 		this.consumoEnergetico = CONSUMO_DEFAULT;
-		this.peso = 5;
+		this.peso = PESO_DEFAULT;
 	}
 
 	Electrodomestico(double precio, int peso) {
-		this.precioBase = precio;
-		this.color = "BLANCO";
-		this.consumoEnergetico = 'F';
+		this.precioBase = calcularPrecio(precio, CONSUMO_DEFAULT, peso);
+		this.color = COLOR_DEFAULT;
+		this.consumoEnergetico = CONSUMO_DEFAULT;
 		this.peso = peso;
 	}
 
 	Electrodomestico(double precio, String color, char consumo, int peso) {
-		this.precioBase = precio;
+		this.precioBase = calcularPrecio(precio, validarConsumo(consumo), peso);
 		this.color = validarColor(color);
 		this.consumoEnergetico = validarConsumo(consumo);
 		this.peso = peso;
@@ -95,6 +96,37 @@ class Electrodomestico {
 			}
 		}
 		return CONSUMO_DEFAULT;
+	}
+
+	// Calculador de precio
+	public double calcularPrecio(double preciocalc, char consumo, int peso) {
+		consumo = Character.toUpperCase(consumo);
+		if (Character.compare(consumo, 'A') == 0) {
+			preciocalc += 100;
+		} else if (Character.compare(consumo, 'B') == 0) {
+			preciocalc += 80;
+		} else if (Character.compare(consumo, 'C') == 0) {
+			preciocalc += 60;
+		} else if (Character.compare(consumo, 'D') == 0) {
+			preciocalc += 50;
+		} else if (Character.compare(consumo, 'E') == 0) {
+			preciocalc += 30;
+		} else if (Character.compare(consumo, 'F') == 0) {
+			preciocalc += 10;
+		}
+
+		if (peso > 0 && peso < 19) {
+			preciocalc += 10;
+		} else if (peso > 19 && peso < 49) {
+			preciocalc += 50;
+		} else if (peso > 49 && peso < 79) {
+			preciocalc += 80;
+		} else if (peso > 79) {
+			preciocalc += 100;
+		}
+
+		return preciocalc;
+
 	}
 
 }
