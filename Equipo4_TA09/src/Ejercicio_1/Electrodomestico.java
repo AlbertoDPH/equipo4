@@ -9,14 +9,12 @@ class Electrodomestico {
 	private final String COLOR_DEFAULT = "BLANCO";
 
 	// Atributos
-
 	protected double precioBase;
 	protected String color;
 	protected char consumoEnergetico;
 	protected int peso;
 
 	// Constructores
-
 	Electrodomestico() {
 		this.precioBase = 100;
 		this.color = COLOR_DEFAULT;
@@ -39,7 +37,6 @@ class Electrodomestico {
 	}
 
 	// Getters
-
 	@Override
 	public String toString() {
 		return "Electrodomestico [precioBase=" + precioBase + ", color=" + color + ", consumoEnergetico="
@@ -80,7 +77,6 @@ class Electrodomestico {
 	}
 
 	// Metodos
-
 	public String validarColor(String color) {
 		color = color.toUpperCase();
 		for (int i = 0; i < COLORES_DISPONIBLES.length; i++) {
