@@ -36,6 +36,7 @@ class Lavadora extends Electrodomestico {
 		return CARGA;
 	}
 
+	//Metodo ToString
 	@Override
 	public String toString() {
 		return "Lavadora [CARGA=" + CARGA + ", precioBase=" + precioBase + ", color=" + color + ", consumoEnergetico="
