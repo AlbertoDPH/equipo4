@@ -1,6 +1,6 @@
 package Ejercicio_1;
 
-public class Electrodomestico {
+class Electrodomestico {
 	
 	// Atributos
 	
