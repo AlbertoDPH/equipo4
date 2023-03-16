@@ -1,25 +1,25 @@
 package Ejercicio_6;
 
 public class Ejercicio6_App {
-
-	public static void main(String[] args) {
-		// Vamo a esplotar eso
-
-		// Creo una pelicula de prueba
-		Pelicula p1 = new Pelicula("Lo que el viento se llevo", 90, 18, "Yo mismo!");
-		System.out.println(p1.toString());
-
-		// Espectadores
-		Espectador[] espectadores = new Espectador[5];
-		espectadores[0] = new Espectador();
-		espectadores[1] = new Espectador();
-		espectadores[2] = new Espectador();
-		espectadores[3] = new Espectador();
-		espectadores[4] = new Espectador();
-
-		Cine c1 = new Cine("Cine 1", p1, espectadores, 5.99);
-		System.out.println(c1.toString());
+	
+	public static void main(String args[]) {
+		
+		//Film example
+		Pelicula p1 = new Pelicula("Avatar", 161, 7, "James Cameron");
+		Pelicula p2 = new Pelicula("Avatar 2", 190, 7, "James Cameron");
+		
+		System.out.println(p1);
+		System.out.println(p2);
+		
+		//Spectator example
+		Espectador e1 = new Espectador("Juan", 18, 100);
+		Espectador e2 = new Espectador("Jose", 20, 50);
+		
+		System.out.println(e1);
+		System.out.println(e2);
+		
+		//Cinema example
+		
 
 	}
-
 }

@@ -1,23 +1,25 @@
 package Ejercicio_6;
 
 public class Pelicula {
-
+	
+	//Attributes
 	protected String titulo;
 	protected int duracion;
-	protected int edadMin;
+	protected int edadMinima;
 	protected String director;
-
-	public Pelicula(String titulo, int duracion, int edadMin, String director) {
+	
+	//Constructor
+	public Pelicula(String titulo, int duracion, int edadMinima, String director) {
 		this.titulo = titulo;
 		this.duracion = duracion;
-		this.edadMin = edadMin;
+		this.edadMinima = edadMinima;
 		this.director = director;
 	}
 
+	//ToString
 	@Override
 	public String toString() {
-		return "Pelicula [titulo=" + titulo + ", duracion=" + duracion + ", edadMin=" + edadMin + ", director="
+		return "Pelicula [titulo=" + titulo + ", duracion=" + duracion + ", edadMinima=" + edadMinima + ", director="
 				+ director + "]";
-	}
-
+	}	
 }
