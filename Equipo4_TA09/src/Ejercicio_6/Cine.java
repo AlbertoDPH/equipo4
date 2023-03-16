@@ -2,19 +2,19 @@ package Ejercicio_6;
 
 import java.util.ArrayList;
 
-// test
-
 public class Cine {
 
 	// Atributos
 
-	private int[][] asientos = new int[8][9];
+	private int[][] asientos = new int[8][9]; // matriz de 8 filas x 9 columnas
 	private Pelicula pelicula;
 	private ArrayList<Espectador> espectadores;
 	private double precio;
 
-	public Cine(String teststring, Pelicula pelicula, ArrayList<Espectador> espectadores, double precio) {
-		this.asientos = sentarEspectadores(asientos, espectadores, pelicula);
+	// Constructor de cine con objeto pelicula, listado de espectadores, y precio de
+	// la entrada
+	public Cine(Pelicula pelicula, ArrayList<Espectador> espectadores, double precio) {
+		this.asientos = sentarEspectadores(asientos, espectadores, pelicula); // asigna espectadores a sus asientos
 		this.pelicula = pelicula;
 		this.espectadores = espectadores;
 		this.precio = precio;
@@ -39,6 +39,8 @@ public class Cine {
 	}
 
 	// Metodos
+	// Metodo que devuelve un vector de 2 direcciones con los asientos ocupados
+	// 1 es ocupado, 0 es libre
 	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula) {
 		for (Espectador Espectador : espectadores) {
 			int edad = Espectador.getEdad();
@@ -56,6 +58,7 @@ public class Cine {
 		return asientos;
 	}
 
+	// Metodo que muestra una tabla por consola con los asientos ocupados del cine
 	public void verAsientosAsignados() {
 		char fila = 'A';
 		for (int i = 0; i < 8; i++) {

@@ -5,17 +5,19 @@ import java.util.Random;
 
 public class Espectador {
 
+	// Atributos
 	private String nombre;
 	private int edad;
 	private double dinero;
 
-	// Constructores
+	// Constructor por defecto, generando un espectador aleatorio
 	public Espectador() {
 		this.nombre = generadorNombre();
 		this.edad = generadorEdad();
 		this.dinero = generadorDinero();
 	}
 
+	// Constructor para generar espectador especifico
 	public Espectador(String nombre, int edad, double dinero) {
 		this.nombre = nombre;
 		this.edad = edad;
@@ -54,7 +56,7 @@ public class Espectador {
 	}
 
 	// Metodos
-
+	// Generador de Edad aleatorio
 	private int generadorEdad() { // Generador de edad aleatoria entre 5 y 80 años
 		int min = 5;
 		int max = 80;
@@ -64,6 +66,7 @@ public class Espectador {
 		return edad;
 	}
 
+	// Generador de Dinero aleatorio
 	private double generadorDinero() { // Generador de dinero aleatorio, entre 0 y 20
 		double min = 0;
 		double max = 20;
@@ -74,6 +77,7 @@ public class Espectador {
 		return dinero;
 	}
 
+	// Generador de nombre aleatorio
 	private String generadorNombre() { // Generador de nombres aleatorios definidos en una lista
 		String[] nombres = { "Gumersindo", "Jose", "Javi", "Alberto", "Maria", "Marta", "Andrea", "Francisco", "Hugo",
 				"Lucas", "Alejandra", "Montserrat" };
@@ -86,6 +90,8 @@ public class Espectador {
 		return nombreRandom;
 	}
 
+	// Generador de espectadores, devolviendo una arraylist con tantos espectadores
+	// como se especifique
 	public static ArrayList<Espectador> generadorEspectadores(int n) {
 		ArrayList<Espectador> espectadores = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
