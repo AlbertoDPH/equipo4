@@ -2,6 +2,8 @@ package Ejercicio_6;
 
 import java.util.Arrays;
 
+// test
+
 public class Cine {
 
 	// Atributos
