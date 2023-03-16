@@ -10,12 +10,7 @@ public class Ejercicio6_App {
 		System.out.println(p1.toString());
 
 		// Espectadores
-		Espectador[] espectadores = new Espectador[5];
-		espectadores[0] = new Espectador();
-		espectadores[1] = new Espectador();
-		espectadores[2] = new Espectador();
-		espectadores[3] = new Espectador();
-		espectadores[4] = new Espectador();
+		Espectador[] espectadores = Espectador.generadorEspectadores(10);
 
 		Cine c1 = new Cine("Cine 1", p1, espectadores, 5.99);
 		System.out.println(c1.toString());

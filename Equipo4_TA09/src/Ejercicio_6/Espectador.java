@@ -84,10 +84,13 @@ public class Espectador {
 
 		return nombreRandom;
 	}
-	
-	public Espectador[] generadorEspectadores(int n) {
-		
-		return;
+
+	public static Espectador[] generadorEspectadores(int n) {
+		Espectador[] espectadores = new Espectador[n];
+		for (int i = 0; i < n; i++) {
+			espectadores[i] = new Espectador();
+		}
+		return espectadores;
 	}
 
 }
