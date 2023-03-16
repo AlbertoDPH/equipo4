@@ -18,10 +18,15 @@ public class Ejercicio6_App {
 		Espectador e2 = new Espectador("Martin", 18, 5);
 		espectadores.add(e2);
 
+		// Se crea el cine con los espectadores creados
 		Cine c1 = new Cine(p1, espectadores, 5.99);
 		System.out.println(c1.toString());
 
+		// Muestra los asientos asignados
 		c1.verAsientosAsignados();
+		
+		// Muestra la pelicula actual
+		c1.peliculaActual();
 
 	}
 

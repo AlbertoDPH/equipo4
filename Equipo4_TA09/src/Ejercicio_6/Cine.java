@@ -34,8 +34,25 @@ public class Cine {
 		return precio;
 	}
 
+	public Pelicula getPelicula() {
+		return pelicula;
+	}
+
+	public ArrayList<Espectador> getEspectadores() {
+		return espectadores;
+	}
+
+	// Setters
 	public void setPrecio(double precio) {
 		this.precio = precio;
+	}
+
+	public void setPelicula(Pelicula pelicula) {
+		this.pelicula = pelicula;
+	}
+
+	public void setEspectadores(ArrayList<Espectador> espectadores) {
+		this.espectadores = espectadores;
 	}
 
 	// Metodos
@@ -69,5 +86,10 @@ public class Cine {
 			System.out.println();
 			fila++;
 		}
+	}
+
+	// Metodo que muestra la pelicula actual
+	public void peliculaActual() {
+		System.out.println("La pelicula actual es: " + pelicula.getTitulo());
 	}
 }
