@@ -12,21 +12,24 @@ public class Ejercicio6_App {
 		//System.out.println(p1.toString());
 
 		// Espectadores
-		ArrayList<Espectador> espectadores = Espectador.generadorEspectadores(10);
+		ArrayList<Espectador> espectadores = Espectador.generadorEspectadores(72);
 		Espectador e1 = new Espectador("Yusep", 69, 15);
 		espectadores.add(e1);
-		Espectador e2 = new Espectador("Martin", 18, 5);
+		Espectador e2 = new Espectador("Martin", 18, 10);
 		espectadores.add(e2);
 
 		// Se crea el cine con los espectadores creados
 		Cine c1 = new Cine(p1, espectadores, 5.99);
 		//System.out.println(c1.toString());
 
-		// Muestra la pelicula actual
-		c1.peliculaActual();
-		
 		// Muestra los asientos asignados
 		c1.verAsientosAsignados();
+
+		// Muestra la pelicula actual
+		c1.peliculaActual();
+
+		// Muestra espectador 1
+		System.out.println(e2.toString());
 
 	}
 

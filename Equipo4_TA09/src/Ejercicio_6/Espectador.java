@@ -1,6 +1,7 @@
 package Ejercicio_6;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Espectador {
@@ -9,12 +10,17 @@ public class Espectador {
 	private String nombre;
 	private int edad;
 	private double dinero;
+	private boolean estaSentado;
+	private int[] asienAsignado;
 
 	// Constructor por defecto, generando un espectador aleatorio
 	public Espectador() {
 		this.nombre = generadorNombre();
 		this.edad = generadorEdad();
 		this.dinero = generadorDinero();
+		this.estaSentado = false;
+		this.asienAsignado = new int[] { 0, 0 };
+
 	}
 
 	// Constructor para generar espectador especifico
@@ -22,12 +28,15 @@ public class Espectador {
 		this.nombre = nombre;
 		this.edad = edad;
 		this.dinero = dinero;
+		this.estaSentado = false;
+		this.asienAsignado = new int[] { 0, 0 };
 	}
 
 	// Getters
 	@Override
 	public String toString() {
-		return "Espectador [nombre=" + nombre + ", edad=" + edad + ", dinero=" + dinero + "]";
+		return "Espectador [nombre=" + nombre + ", edad=" + edad + ", dinero=" + dinero + ", estaSentado=" + estaSentado
+				+ ", asienAsignado=" + Arrays.toString(asienAsignado) + "]";
 	}
 
 	public String getNombre() {
@@ -42,6 +51,14 @@ public class Espectador {
 		return dinero;
 	}
 
+	public boolean getEstaSentado() {
+		return estaSentado;
+	}
+
+	public int[] getAsienAsignado() {
+		return asienAsignado;
+	}
+
 	// Setters
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
@@ -53,6 +70,14 @@ public class Espectador {
 
 	public void setDinero(double dinero) {
 		this.dinero = dinero;
+	}
+
+	public void setEstaSentado(boolean estaSentado) {
+		this.estaSentado = estaSentado;
+	}
+
+	public void setAsienAsignado(int[] asienAsignado) {
+		this.asienAsignado = asienAsignado;
 	}
 
 	// Metodos
