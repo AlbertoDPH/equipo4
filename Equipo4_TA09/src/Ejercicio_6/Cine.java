@@ -15,12 +15,11 @@ public class Cine {
 	private double precio;
 
 	public Cine(String teststring, Pelicula pelicula, ArrayList<Espectador> espectadores, double precio) {
-		this.asientos = sentarEspectadores(asientos, espectadores);
+		this.asientos = sentarEspectadores(asientos, espectadores, pelicula);
 		this.teststring = teststring;
 		this.pelicula = pelicula;
 		this.espectadores = espectadores;
 		this.precio = precio;
-
 	}
 
 	// Getters
@@ -28,6 +27,10 @@ public class Cine {
 	public String toString() {
 		return "Cine [teststring=" + teststring + ", pelicula=" + pelicula + ", espectadores=" + espectadores
 				+ ", precio=" + precio + "]";
+	}
+
+	public int[][] getAsientos() {
+		return asientos;
 	}
 
 	public double getPrecio() {
@@ -39,16 +42,29 @@ public class Cine {
 	}
 
 	// Metodos
-	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores) {
-		for (Object Espectador : espectadores) {
-			for (int i = 0; i < 8; i++) {
-				for (int j = 0; j < 9; j++) {
-					if (asientos[i][j] == 0) {
-						asientos[i][j] = 1;
+	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula) {
+		for (Espectador Espectador : espectadores) {
+			int edad = Espectador.getEdad();
+			double dinero = Espectador.getDinero();
+			if (dinero >= this.getPrecio() && edad >= pelicula.getEdadMin())
+				loopvector: for (int i = 0; i < 8; i++) {
+					for (int j = 0; j < 9; j++) {
+						if (asientos[i][j] == 0) {
+							asientos[i][j] = 1;
+							break loopvector;
+						}
 					}
 				}
-			}
 		}
 		return asientos;
+	}
+
+	public void verAsientosAsignados() {
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 9; j++) {
+				System.out.print(asientos[i][j] + " ");
+			}
+			System.out.println();
+		}
 	}
 }
