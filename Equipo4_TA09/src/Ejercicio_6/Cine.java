@@ -58,21 +58,45 @@ public class Cine {
 	// Metodos
 	// Metodo que devuelve un vector de 2 direcciones con los asientos ocupados
 	// 1 es ocupado, 0 es libre
+	/**
+	 * Método que devuelve una matriz con los asientos ocupados de una sala de cine de 8 * 9
+	 * @param asientos matriz que le pasamos por parametro que se llenara de 0(libre) 1(ocupado)
+	 * @param espectadores le pasamos el ArrayList con los espetadores
+	 * @param pelicula Le pasamos los datos del objeto pelicula que usaremos para controlar la edadMin
+	 * @return devuleve la matriz con los asientos ocupados
+	 */
 	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula) {
-		for (Espectador Espectador : espectadores) {
-			int edad = Espectador.getEdad();
-			double dinero = Espectador.getDinero();
-			if (dinero >= this.getPrecio() && edad >= pelicula.getEdadMin())
-				loopvector: for (int i = 0; i < 8; i++) {
-					for (int j = 0; j < 9; j++) {
-						if (asientos[i][j] == 0) {
-							asientos[i][j] = 1;
-							break loopvector;
-						}
-					}
+		ArrayList<Integer> asienNoUsados = new ArrayList<>();
+		for (int i = 0; i < 8; i++) {
+			for (int j = 0; j < 9; j++) {
+				/*Recorremos la matriz de asientos para buscar los que no hayan sido ocupados (0)
+				 * se agragan a la lista los asientos no ocupado
+				 */
+			
+ 				if (asientos[i][j] == 0) {
+					int noOupado = i * 9 + j;
+					asienNoUsados.add(noOupado);
 				}
+			}
+		}
+		for (Espectador espectador : espectadores) {
+			int edad = espectador.getEdad();
+			double dinero = espectador.getDinero();
+			if (dinero >= this.getPrecio() && edad >= pelicula.getEdadMin()) {
+			
+				//Numero aleatorio entre todos los asientos no usados
+				int aleaNoUsado = (int) (Math.random() * asienNoUsados.size());
+				//Asiento libre obtenido del aleatorio
+				int asiento = asienNoUsados.get(aleaNoUsado);
+				
+				//calcula la fial y la columna de asiento y lo maraca como ocupdado (1)
+				asientos[asiento / 9][asiento % 9] = 1;
+				//Elimina el asiento usado de la lista asienNoUsados
+				asienNoUsados.remove(aleaNoUsado);
+			}
 		}
 		return asientos;
+
 	}
 
 	// Metodo que muestra una tabla por consola con los asientos ocupados del cine
@@ -81,7 +105,11 @@ public class Cine {
 		for (int i = 0; i < 8; i++) {
 			System.out.print("Fila " + fila + " ");
 			for (int j = 0; j < 9; j++) {
-				System.out.print(asientos[i][j] + " ");
+				if (asientos[i][j] == 1)
+					//Si es asiento ocupado pinta el asiento en rojo
+					System.out.print("\u001B[41m" + asientos[i][j] + "\u001B[0m" + " ");
+				else
+					System.out.print(asientos[i][j] + " ");
 			}
 			System.out.println();
 			fila++;
