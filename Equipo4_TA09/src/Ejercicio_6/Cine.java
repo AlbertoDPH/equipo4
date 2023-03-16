@@ -14,7 +14,7 @@ public class Cine {
 	private double precio;
 
 	public Cine(String teststring, Pelicula pelicula, Espectador[] espectadores, double precio) {
-		this.asientos = sentarEspectadores(asientos, espectadores);
+		this.asientos = sentarEspectadores(espectadores, pelicula);
 		this.teststring = teststring;
 		this.pelicula = pelicula;
 		this.espectadores = espectadores;
@@ -38,12 +38,31 @@ public class Cine {
 	}
 
 	// Metodos
-	int[][] sentarEspectadores(int[][] asientos, Espectador[] espectadores) {
+//	public void sentarEspectadores(int[][] asientos, Espectador[] espectadores, Pelicula pelicula) {
+	public int[][] sentarEspectadores(Espectador[] espectadores, Pelicula pelicula) {
+
+		int edadEspectador;
+		double dineroEspectador;
+		double precioPelicula;
+		int edadMin;
+
+		precioPelicula = this.precio;
+		edadMin = pelicula.getEdadMin();
+
 		for (Object Espectador : espectadores) {
 			for (int i = 0; i < 8; i++) {
 				for (int j = 0; j < 9; j++) {
-					if (asientos[i][j] == 0) {
-						asientos[i][j] = 1;
+					edadEspectador = espectadores[j].getEdad();
+					dineroEspectador = espectadores[j].getDinero();
+
+					if (asientos[i][j] == 0 && (edadEspectador >= edadMin && dineroEspectador >= precioPelicula)) {
+
+						System.out.print(" " + (asientos[i][j] = 1));
+
+					} else
+						System.out.print(" " + (asientos[i][j] = 0));
+					if (j == espectadores.length) {
+						break;
 					}
 				}
 			}

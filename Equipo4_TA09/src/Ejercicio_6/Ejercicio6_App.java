@@ -13,14 +13,18 @@ public class Ejercicio6_App {
 
 		// Espectadores
 		Espectador[] espectadores = new Espectador[5];
-		espectadores[0] = new Espectador();
-		espectadores[1] = new Espectador();
-		espectadores[2] = new Espectador();
-		espectadores[3] = new Espectador();
-		espectadores[4] = new Espectador();
+		espectadores[0] = new Espectador("Pepe",20,10);
+		espectadores[1] = new Espectador("Pepe",18,20);
+		espectadores[2] = new Espectador("Pepe",15,30);
+		espectadores[3] = new Espectador("Pepe",12,40);
+		espectadores[4] = new Espectador("Pepe",30,4);
 
 		Cine c1 = new Cine("Cine 1", p1, espectadores, 5.99);
 		System.out.println(c1.toString());
+		
+	
+		
+		c1.sentarEspectadores(espectadores, p1);
 
 	}
 
