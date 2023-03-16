@@ -1,5 +1,7 @@
 package Ejercicio_6;
 
+import java.util.Random;
+
 public class Espectador {
 
 	private String nombre;
@@ -9,7 +11,7 @@ public class Espectador {
 	// Constructores
 	public Espectador() {
 		this.nombre = "Gumersindo";
-		this.edad = 20;
+		this.edad = generadorEdad();
 		this.dinero = 10;
 	}
 
@@ -48,6 +50,17 @@ public class Espectador {
 
 	public void setDinero(double dinero) {
 		this.dinero = dinero;
+	}
+
+	// Metodos
+
+	private int generadorEdad() {
+		int min = 5;
+		int max = 80;
+		Random edadRandom = new Random();
+
+		int edad = edadRandom.nextInt((max - min) + 1) + min;
+		return edad;
 	}
 
 }
