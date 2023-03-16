@@ -20,5 +20,4 @@ public class Ejercicio6_App {
 		System.out.println(c1.toString());
 
 	}
-
 }
