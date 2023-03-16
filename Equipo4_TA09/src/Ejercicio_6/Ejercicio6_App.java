@@ -18,8 +18,17 @@ public class Ejercicio6_App {
 		System.out.println(e1);
 		System.out.println(e2);
 		
-		//Cinema example
+		//Cinema example		
+		Asiento[][] c = new Asiento[9][8];
 		
+		for(int i = 0; i < 9; i++) {
+			for(int j = 0; j < 8; j++) {
+				Asiento a = new Asiento();
+				c[i][j] = a;
+			}
+		}
+		
+		System.out.println(c[0][2]);
 
 	}
 }

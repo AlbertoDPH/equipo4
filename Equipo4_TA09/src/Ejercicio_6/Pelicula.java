@@ -15,6 +15,13 @@ public class Pelicula {
 		this.edadMinima = edadMinima;
 		this.director = director;
 	}
+	
+	public Pelicula() {
+		this.titulo = "nada";
+		this.duracion = 0;
+		this.edadMinima = 0;
+		this.director = "nada";
+	}
 
 	//ToString
 	@Override

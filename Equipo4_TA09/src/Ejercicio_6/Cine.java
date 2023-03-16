@@ -4,17 +4,20 @@ public class Cine {
 
 	//Attributes
 	private Pelicula pelicula;
-	private double precio;
+	private final double PRECIO = 10;
 	
 	//Constructor
-	public Cine(Pelicula pelicula, double precio) {
+	public Cine(Pelicula pelicula) {
 		this.pelicula = pelicula;
-		this.precio = precio;
+	}
+	
+	public Cine() {
+		this.pelicula = new Pelicula();
 	}
 
 	@Override
 	public String toString() {
-		return "Cine [pelicula=" + pelicula + ", precio=" + precio + "]";
+		return "Cine [pelicula=" + pelicula + ", precio=" + PRECIO + "]";
 	}
 
 	
