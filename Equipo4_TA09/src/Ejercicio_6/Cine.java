@@ -9,14 +9,12 @@ public class Cine {
 	// Atributos
 
 	private int[][] asientos = new int[8][9];
-	private String teststring;
 	private Pelicula pelicula;
 	private ArrayList<Espectador> espectadores;
 	private double precio;
 
 	public Cine(String teststring, Pelicula pelicula, ArrayList<Espectador> espectadores, double precio) {
 		this.asientos = sentarEspectadores(asientos, espectadores, pelicula);
-		this.teststring = teststring;
 		this.pelicula = pelicula;
 		this.espectadores = espectadores;
 		this.precio = precio;
@@ -25,8 +23,7 @@ public class Cine {
 	// Getters
 	@Override
 	public String toString() {
-		return "Cine [teststring=" + teststring + ", pelicula=" + pelicula + ", espectadores=" + espectadores
-				+ ", precio=" + precio + "]";
+		return "Cine [pelicula=" + pelicula + ", espectadores=" + espectadores + ", precio=" + precio + "]";
 	}
 
 	public int[][] getAsientos() {
@@ -60,11 +57,14 @@ public class Cine {
 	}
 
 	public void verAsientosAsignados() {
+		char fila = 'A';
 		for (int i = 0; i < 8; i++) {
+			System.out.print("Fila " + fila + " ");
 			for (int j = 0; j < 9; j++) {
 				System.out.print(asientos[i][j] + " ");
 			}
 			System.out.println();
+			fila++;
 		}
 	}
 }
