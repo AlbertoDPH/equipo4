@@ -19,7 +19,7 @@ public class Espectador {
 		this.edad = generadorEdad();
 		this.dinero = generadorDinero();
 		this.estaSentado = false;
-		this.asienAsignado = new int [] {0,0} ;
+		this.asienAsignado = new int[] { 0, 0 };
 
 	}
 
@@ -29,7 +29,7 @@ public class Espectador {
 		this.edad = edad;
 		this.dinero = dinero;
 		this.estaSentado = false;
-		this.asienAsignado = new int [] {0,0} ;
+		this.asienAsignado = new int[] { 0, 0 };
 	}
 
 	// Getters

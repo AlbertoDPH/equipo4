@@ -14,7 +14,8 @@ public class Cine {
 	// Constructor de cine con objeto pelicula, listado de espectadores, y precio de
 	// la entrada
 	public Cine(Pelicula pelicula, ArrayList<Espectador> espectadores, double precio) {
-		this.asientos = sentarEspectadores(asientos, espectadores, pelicula); // asigna espectadores a sus asientos
+		this.asientos = sentarEspectadores(asientos, espectadores, pelicula, precio); // asigna espectadores a sus
+																						// asientos
 		this.pelicula = pelicula;
 		this.espectadores = espectadores;
 		this.precio = precio;
@@ -69,7 +70,7 @@ public class Cine {
 	 *                     para controlar la edadMin
 	 * @return devuleve la matriz con los asientos ocupados
 	 */
-	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula) {
+	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula, double precio) {
 		ArrayList<Integer> asienNoUsados = new ArrayList<>();
 		for (int i = 0; i < 8; i++) {
 			for (int j = 0; j < 9; j++) {
@@ -87,7 +88,7 @@ public class Cine {
 		for (Espectador espectador : espectadores) {
 			int edad = espectador.getEdad();
 			double dinero = espectador.getDinero();
-			if (dinero >= this.getPrecio() && edad >= pelicula.getEdadMin()) {
+			if (dinero >= precio && edad >= pelicula.getEdadMin()) {
 
 				// Numero aleatorio entre todos los asientos no usados
 				int aleaNoUsado = (int) (Math.random() * asienNoUsados.size());
@@ -103,7 +104,7 @@ public class Cine {
 				// Setar espectador
 				espectador.setEstaSentado(true);
 
-				//Asigna la posicion al espectador
+				// Asigna la posicion al espectador
 				espectador.setAsienAsignado(new int[] { asiento / 9, asiento % 9 });
 			}
 		}
@@ -113,23 +114,28 @@ public class Cine {
 
 	// Metodo que muestra una tabla por consola con los asientos ocupados del cine
 	public void verAsientosAsignados() {
+
 		char fila = 'A';
 		for (int i = 0; i < 8; i++) {
+			System.out.println("-------------------------------------------");
 			System.out.print("Fila " + fila + " ");
 			for (int j = 0; j < 9; j++) {
-				if (asientos[i][j] == 1)
-					// Si es asiento ocupado pinta el asiento en rojo
-					System.out.print("\u001B[41m" + asientos[i][j] + "\u001B[0m" + " ");
-				else
-					System.out.print(asientos[i][j] + " ");
+
+				System.out.print(
+						asientos[i][j] == 0 ? "\u001B[32m" + " |\033[4;2m" + " " + "\033[4;0m\u001B[32m|" + "\u001B[37m"
+								: "\u001B[31m" + " |\033[4;2m" + "O" + "\033[4;0m\u001B[31m|" + "\u001B[37m");
 			}
 			System.out.println();
 			fila++;
 		}
+		System.out.println("___________________________________________");
+		System.out.println("Columna: 1   2   3   4   5   6   7   8   9 ");
 	}
 
 	// Metodo que muestra la pelicula actual
 	public void peliculaActual() {
-		System.out.println("La pelicula actual es: " + pelicula.getTitulo());
+
+		System.out.println("Pelicula: " + pelicula.getTitulo() + "\n");
 	}
+
 }
