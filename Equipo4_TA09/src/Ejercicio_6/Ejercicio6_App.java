@@ -12,7 +12,7 @@ public class Ejercicio6_App {
 		System.out.println(p1.toString());
 
 		// Espectadores
-		ArrayList<Espectador> espectadores = Espectador.generadorEspectadores(10);
+		ArrayList<Espectador> espectadores = Espectador.generadorEspectadores(72);
 		Espectador e1 = new Espectador("Yusep", 69, 15);
 		espectadores.add(e1);
 		Espectador e2 = new Espectador("Martin", 18, 5);
@@ -27,6 +27,9 @@ public class Ejercicio6_App {
 		
 		// Muestra la pelicula actual
 		c1.peliculaActual();
+		
+		//Muestra espectador 1
+		e1.toString();
 
 	}
 
