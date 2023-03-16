@@ -1,5 +1,6 @@
 package Ejercicio_6;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Espectador {
@@ -85,10 +86,11 @@ public class Espectador {
 		return nombreRandom;
 	}
 
-	public static Espectador[] generadorEspectadores(int n) {
-		Espectador[] espectadores = new Espectador[n];
+	public static ArrayList<Espectador> generadorEspectadores(int n) {
+		ArrayList<Espectador> espectadores = new ArrayList<>();
 		for (int i = 0; i < n; i++) {
-			espectadores[i] = new Espectador();
+			Espectador espectador = new Espectador();
+			espectadores.add(espectador);
 		}
 		return espectadores;
 	}
