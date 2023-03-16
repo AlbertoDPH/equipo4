@@ -111,6 +111,7 @@ public class Cine {
 		return asientos;
 
 	}
+
 	// Metodo que muestra una tabla por consola con los asientos ocupados del cine
 	public void verAsientosAsignados() {
 
