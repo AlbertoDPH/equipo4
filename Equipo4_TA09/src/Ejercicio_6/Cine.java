@@ -2,32 +2,32 @@ package Ejercicio_6;
 
 import java.util.ArrayList;
 
-// test
-
 public class Cine {
 
 	// Atributos
 
-	private int[][] asientos = new int[8][9];
-	private String teststring;
+	private int[][] asientos = new int[8][9]; // matriz de 8 filas x 9 columnas
 	private Pelicula pelicula;
 	private ArrayList<Espectador> espectadores;
 	private double precio;
 
-	public Cine(String teststring, Pelicula pelicula, ArrayList<Espectador> espectadores, double precio) {
-		this.asientos = sentarEspectadores(asientos, espectadores);
-		this.teststring = teststring;
+	// Constructor de cine con objeto pelicula, listado de espectadores, y precio de
+	// la entrada
+	public Cine(Pelicula pelicula, ArrayList<Espectador> espectadores, double precio) {
+		this.asientos = sentarEspectadores(asientos, espectadores, pelicula); // asigna espectadores a sus asientos
 		this.pelicula = pelicula;
 		this.espectadores = espectadores;
 		this.precio = precio;
-
 	}
 
 	// Getters
 	@Override
 	public String toString() {
-		return "Cine [teststring=" + teststring + ", pelicula=" + pelicula + ", espectadores=" + espectadores
-				+ ", precio=" + precio + "]";
+		return "Cine [pelicula=" + pelicula + ", espectadores=" + espectadores + ", precio=" + precio + "]";
+	}
+
+	public int[][] getAsientos() {
+		return asientos;
 	}
 
 	public double getPrecio() {
@@ -39,16 +39,35 @@ public class Cine {
 	}
 
 	// Metodos
-	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores) {
-		for (Object Espectador : espectadores) {
-			for (int i = 0; i < 8; i++) {
-				for (int j = 0; j < 9; j++) {
-					if (asientos[i][j] == 0) {
-						asientos[i][j] = 1;
+	// Metodo que devuelve un vector de 2 direcciones con los asientos ocupados
+	// 1 es ocupado, 0 es libre
+	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula) {
+		for (Espectador Espectador : espectadores) {
+			int edad = Espectador.getEdad();
+			double dinero = Espectador.getDinero();
+			if (dinero >= this.getPrecio() && edad >= pelicula.getEdadMin())
+				loopvector: for (int i = 0; i < 8; i++) {
+					for (int j = 0; j < 9; j++) {
+						if (asientos[i][j] == 0) {
+							asientos[i][j] = 1;
+							break loopvector;
+						}
 					}
 				}
-			}
 		}
 		return asientos;
+	}
+
+	// Metodo que muestra una tabla por consola con los asientos ocupados del cine
+	public void verAsientosAsignados() {
+		char fila = 'A';
+		for (int i = 0; i < 8; i++) {
+			System.out.print("Fila " + fila + " ");
+			for (int j = 0; j < 9; j++) {
+				System.out.print(asientos[i][j] + " ");
+			}
+			System.out.println();
+			fila++;
+		}
 	}
 }

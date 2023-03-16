@@ -2,11 +2,13 @@ package Ejercicio_6;
 
 public class Pelicula {
 
+	// Atributos
 	protected String titulo;
 	protected int duracion;
 	protected int edadMin;
 	protected String director;
 
+	// Constructor
 	public Pelicula(String titulo, int duracion, int edadMin, String director) {
 		this.titulo = titulo;
 		this.duracion = duracion;
@@ -18,6 +20,40 @@ public class Pelicula {
 	public String toString() {
 		return "Pelicula [titulo=" + titulo + ", duracion=" + duracion + ", edadMin=" + edadMin + ", director="
 				+ director + "]";
+	}
+
+	// Getters
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public int getDuracion() {
+		return duracion;
+	}
+
+	public int getEdadMin() {
+		return edadMin;
+	}
+
+	public String getDirector() {
+		return director;
+	}
+
+	// Setters
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public void setDuracion(int duracion) {
+		this.duracion = duracion;
+	}
+
+	public void setEdadMin(int edadMin) {
+		this.edadMin = edadMin;
+	}
+
+	public void setDirector(String director) {
+		this.director = director;
 	}
 
 }
