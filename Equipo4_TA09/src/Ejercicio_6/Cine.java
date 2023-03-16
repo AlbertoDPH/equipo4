@@ -45,25 +45,36 @@ public class Cine {
 		double dineroEspectador;
 		double precioPelicula;
 		int edadMin;
+		boolean espectadorOK = false;
+		int contSentados = 0;
 
 		precioPelicula = this.precio;
 		edadMin = pelicula.getEdadMin();
 
-		for (Object Espectador : espectadores) {
-			for (int i = 0; i < 8; i++) {
-				for (int j = 0; j < 9; j++) {
-					edadEspectador = espectadores[j].getEdad();
-					dineroEspectador = espectadores[j].getDinero();
+		for (int z = 0; z < espectadores.length; z++) {
+			edadEspectador = espectadores[z].getEdad();
+			dineroEspectador = espectadores[z].getDinero();
 
-					if (asientos[i][j] == 0 && (edadEspectador >= edadMin && dineroEspectador >= precioPelicula)) {
+			if (edadEspectador >= pelicula.getEdadMin() && (dineroEspectador >= precioPelicula))
+				espectadorOK = true;
+			else
+				espectadorOK = false;
 
-						System.out.print(" " + (asientos[i][j] = 1));
+			for (Object Espectador : espectadores) {
+				
+				for (int i = 0; i < 8; i++) {
+					for (int j = 0; j < 9; j++) {
 
-					} else
-						System.out.print(" " + (asientos[i][j] = 0));
-					if (j == espectadores.length) {
-						break;
+						if (asientos[i][j] == 0 && espectadorOK) {
+
+							System.out.print(" " + (asientos[i][j] = 1));
+							contSentados++;
+
+						} else
+							System.out.print(" " + (asientos[i][j] = 0));
+
 					}
+					System.out.println();
 				}
 			}
 		}
