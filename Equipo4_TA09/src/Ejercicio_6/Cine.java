@@ -111,7 +111,6 @@ public class Cine {
 		return asientos;
 
 	}
-
 	// Metodo que muestra una tabla por consola con los asientos ocupados del cine
 	public void verAsientosAsignados() {
 
@@ -120,7 +119,6 @@ public class Cine {
 			System.out.println("-------------------------------------------");
 			System.out.print("Fila " + fila + " ");
 			for (int j = 0; j < 9; j++) {
-
 				System.out.print(
 						asientos[i][j] == 0 ? "\u001B[32m" + " |\033[4;2m" + " " + "\033[4;0m\u001B[32m|" + "\u001B[37m"
 								: "\u001B[31m" + " |\033[4;2m" + "O" + "\033[4;0m\u001B[31m|" + "\u001B[37m");
@@ -134,7 +132,6 @@ public class Cine {
 
 	// Metodo que muestra la pelicula actual
 	public void peliculaActual() {
-
 		System.out.println("Pelicula: " + pelicula.getTitulo() + "\n");
 	}
 
