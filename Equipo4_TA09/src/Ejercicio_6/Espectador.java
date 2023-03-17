@@ -20,7 +20,6 @@ public class Espectador {
 		this.dinero = generadorDinero();
 		this.estaSentado = false;
 		this.asienAsignado = new int[] { 0, 0 };
-
 	}
 
 	// Constructor para generar espectador especifico

@@ -33,7 +33,6 @@ public class cineUtils {
 		 */
 		for (int i = 0; i < FILAS; i++) {
 			for (int j = 0; j < COLUMNAS; j++) {
-
 				/*
 				 * Calcula el número de asiento no ocupada i= numero de la fila 9 es el número
 				 * de columnas que tiene la matriz j es el número de la columna del asiento no
