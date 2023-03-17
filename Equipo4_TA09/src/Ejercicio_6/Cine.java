@@ -76,7 +76,7 @@ public class Cine {
 	 */
 	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula, double precio) {
 		ArrayList<Integer> asienNoUsados = new ArrayList<>();
-		
+
 		// Limpiamos los asientos si hubo una sesion anterior
 		asientos = resetEspectadores(asientos);
 
