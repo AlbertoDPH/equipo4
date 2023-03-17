@@ -74,14 +74,10 @@ public class Cine {
 	 *                     para controlar la edadMin
 	 * @return devuleve la matriz con los asientos ocupados
 	 */
-<<<<<<< HEAD
+
 	private int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula,
 			double precio) {
-=======
-	public int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula,
-			double precio) {
-		// Lo usaremos para ir introduciendo los asientos no ocupados
->>>>>>> branch 'master' of https://github.com/AlbertoDPH/equipo4.git
+
 		ArrayList<Integer> asienNoUsados = new ArrayList<>();
 
 		// Limpiamos los asientos si hubo una sesion anterior
