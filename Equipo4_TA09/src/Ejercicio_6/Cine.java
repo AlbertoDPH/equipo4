@@ -4,9 +4,12 @@ import java.util.ArrayList;
 
 public class Cine {
 
-	// Atributos
+	// Tamaño cine
+	private final int FILAS = 8;
+	private final int COLUMNAS = 9;
 
-	private int[][] asientos = new int[8][9]; // matriz de 8 filas x 9 columnas
+	// Atributos
+	private int[][] asientos = new int[FILAS][COLUMNAS]; // matriz de 8 filas x 9 columnas
 	private Pelicula pelicula;
 	private ArrayList<Espectador> espectadores;
 	private double precio;
@@ -54,6 +57,7 @@ public class Cine {
 
 	public void setEspectadores(ArrayList<Espectador> espectadores) {
 		this.espectadores = espectadores;
+		this.asientos = sentarEspectadores(asientos, espectadores, pelicula, precio);
 	}
 
 	// Metodos
@@ -72,15 +76,16 @@ public class Cine {
 	 */
 	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula, double precio) {
 		ArrayList<Integer> asienNoUsados = new ArrayList<>();
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 9; j++) {
+		asientos = resetEspectadores(asientos);
+		for (int i = 0; i < FILAS; i++) {
+			for (int j = 0; j < COLUMNAS; j++) {
 				/*
 				 * Recorremos la matriz de asientos para buscar los que no hayan sido ocupados
 				 * (0) se agragan a la lista los asientos no ocupado
 				 */
 
 				if (asientos[i][j] == 0) {
-					int noOupado = i * 9 + j;
+					int noOupado = i * COLUMNAS + j;
 					asienNoUsados.add(noOupado);
 				}
 			}
@@ -96,7 +101,7 @@ public class Cine {
 				int asiento = asienNoUsados.get(aleaNoUsado);
 
 				// calcula la fila y la columna de asiento y lo marca como ocupdado (1)
-				asientos[asiento / 9][asiento % 9] = 1;
+				asientos[asiento / COLUMNAS][asiento % COLUMNAS] = 1;
 
 				// Elimina el asiento usado de la lista asienNoUsados
 				asienNoUsados.remove(aleaNoUsado);
@@ -112,14 +117,23 @@ public class Cine {
 
 	}
 
+	int[][] resetEspectadores(int[][] asientos) {
+		for (int i = 0; i < FILAS; i++) {
+			for (int j = 0; j < COLUMNAS; j++) {
+				asientos[i][j] = 0;
+			}
+		}
+		return asientos;
+	}
+
 	// Metodo que muestra una tabla por consola con los asientos ocupados del cine
 	public void verAsientosAsignados() {
 
 		char fila = 'A';
-		for (int i = 0; i < 8; i++) {
+		for (int i = 0; i < FILAS; i++) {
 			System.out.println("-------------------------------------------");
 			System.out.print("Fila " + fila + " ");
-			for (int j = 0; j < 9; j++) {
+			for (int j = 0; j < COLUMNAS; j++) {
 				System.out.print(
 						asientos[i][j] == 0 ? "\u001B[32m" + " |\033[4;2m" + " " + "\033[4;0m\u001B[32m|" + "\u001B[37m"
 								: "\u001B[31m" + " |\033[4;2m" + "O" + "\033[4;0m\u001B[31m|" + "\u001B[37m");

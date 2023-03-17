@@ -3,10 +3,10 @@ package Ejercicio_6;
 public class Pelicula {
 
 	// Atributos
-	protected String titulo;
-	protected int duracion;
-	protected int edadMin;
-	protected String director;
+	private String titulo;
+	private int duracion;
+	private int edadMin;
+	private String director;
 
 	// Constructor
 	public Pelicula(String titulo, int duracion, int edadMin, String director) {
