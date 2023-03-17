@@ -8,29 +8,30 @@ public class Ejercicio6_App {
 		// Vamo a esplotar eso
 
 		// Creo una pelicula de prueba
-		Pelicula p1 = new Pelicula("Lo que el viento se llevo", 90, 18, "Yo mismo!");
-		// System.out.println(p1.toString());
+				Pelicula p1 = new Pelicula("Lo que el viento se llevo", 90, 18, "Yo mismo!");
+				// System.out.println(p1.toString());
 
-		// Espectadores
-		ArrayList<Espectador> espectadores = Espectador.generadorEspectadores(72);
-		Espectador e1 = new Espectador("Yusep", 69, 15);
-		espectadores.add(e1);
-		Espectador e2 = new Espectador("Martin", 18, 10);
-		espectadores.add(e2);
+				// Espectadores
+				ArrayList<Espectador> espectadores = Espectador.generadorEspectadores(72);
+				Espectador e1 = new Espectador("Yusep", 69, 15);
+				espectadores.add(e1);
+				Espectador e2 = new Espectador("Martin", 18, 10);
+				espectadores.add(e2);
 
-		// Se crea el cine con los espectadores creados
-		Cine c1 = new Cine(p1, espectadores, 5.99);
-		// System.out.println(c1.toString());
+				// Se crea el cine con los espectadores creados
+				Cine c1 = new Cine(p1, espectadores, 5.99);
+				// System.out.println(c1.toString());
 
-		// Muestra los asientos asignados
-		c1.verAsientosAsignados();
+				// Muestra los asientos asignados
+				c1.verAsientosAsignados();
 
-		// Muestra la pelicula actual
-		c1.peliculaActual();
+				// Muestra la pelicula actual
+				c1.peliculaActual();
 
-		// Muestra espectador 1
-		System.out.println(e2.toString());
+				// Muestra espectador 1
+				System.out.println(e2.toString());
 
+<<<<<<< HEAD
 		ArrayList<Espectador> espectadores2 = Espectador.generadorEspectadores(10);
 		Pelicula p2 = new Pelicula("Kill Bill", 90, 1, "Otra persona que no recuerdo su nombre");
 		c1.setPrecio(1);
@@ -38,6 +39,15 @@ public class Ejercicio6_App {
 		c1.setEspectadores(espectadores2);
 		c1.verAsientosAsignados();
 		c1.peliculaActual();
+=======
+				ArrayList<Espectador> espectadores2 = Espectador.generadorEspectadores(5);
+				Pelicula p2 = new Pelicula("Kill Bill", 90, 1, "Otra persona que no recuerdo su nombre");
+				c1.setPrecio(1);
+				c1.setPelicula(p2);
+				c1.setEspectadores(espectadores2);
+				c1.verAsientosAsignados();
+				c1.peliculaActual();
+>>>>>>> branch 'master' of https://github.com/AlbertoDPH/equipo4.git
 
 	}
 

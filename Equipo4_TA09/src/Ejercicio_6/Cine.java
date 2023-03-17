@@ -74,20 +74,33 @@ public class Cine {
 	 *                     para controlar la edadMin
 	 * @return devuleve la matriz con los asientos ocupados
 	 */
+<<<<<<< HEAD
 	private int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula,
 			double precio) {
+=======
+	public int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula,
+			double precio) {
+		// Lo usaremos para ir introduciendo los asientos no ocupados
+>>>>>>> branch 'master' of https://github.com/AlbertoDPH/equipo4.git
 		ArrayList<Integer> asienNoUsados = new ArrayList<>();
 
 		// Limpiamos los asientos si hubo una sesion anterior
 		asientos = resetEspectadores(asientos);
 
+		/*
+		 * Recorremos la matriz de asientos para buscar los que no hayan sido ocupados
+		 * (0) se agragan a la lista los asientos no ocupado
+		 */
 		for (int i = 0; i < FILAS; i++) {
 			for (int j = 0; j < COLUMNAS; j++) {
-				/*
-				 * Recorremos la matriz de asientos para buscar los que no hayan sido ocupados
-				 * (0) se agragan a la lista los asientos no ocupado
-				 */
 
+				/*
+				 * Calcula el número de asiento no ocupada i= numero de la fila 9 es el número
+				 * de columnas que tiene la matriz j es el número de la columna del asiento no
+				 * ocupado. (i*9)Obtenemos la posición inicial del asiento en la fila. Al sumar
+				 * j se obtiene la posición final del asiento en esa fila Finalmente esa
+				 * posicion se agrega a la lista de asienNoUsados
+				 */
 				if (asientos[i][j] == 0) {
 					int noOupado = i * COLUMNAS + j;
 					asienNoUsados.add(noOupado);
@@ -95,27 +108,31 @@ public class Cine {
 			}
 		}
 		for (Espectador espectador : espectadores) {
+			// Recoge la edad del espectador
 			int edad = espectador.getEdad();
+			// Recoge el dinero que tiene el espectador
 			double dinero = espectador.getDinero();
-			if (dinero >= precio && edad >= pelicula.getEdadMin()) {
 
+			// Si cumple con los requisitos
+			if (dinero >= precio && edad >= pelicula.getEdadMin()) {
 				// Numero aleatorio entre todos los asientos no usados
 				int aleaNoUsado = (int) (Math.random() * asienNoUsados.size());
 				// Asiento libre obtenido del aleatorio
 				int asiento = asienNoUsados.get(aleaNoUsado);
 
-				// calcula la fila y la columna de asiento y lo marca como ocupdado (1)
+				// calcula la fila y la columna de asiento y lo marca como ocupadado (1)
 				asientos[asiento / COLUMNAS][asiento % COLUMNAS] = 1;
 
 				// Elimina el asiento usado de la lista asienNoUsados
 				asienNoUsados.remove(aleaNoUsado);
 
-				// Setar espectador
+				// Sentar espectador
 				espectador.setEstaSentado(true);
 
 				// Asigna la posicion al espectador
-				espectador.setAsienAsignado(new int[] { asiento / 9, asiento % 9 });
+				espectador.setAsienAsignado(new int[] { asiento / COLUMNAS, asiento % COLUMNAS });
 			}
+			// Devuelve la matriz asientos con las posiciones de los asientos ocuapados
 		}
 		return asientos;
 
