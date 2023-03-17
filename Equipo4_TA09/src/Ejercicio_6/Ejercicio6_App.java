@@ -31,7 +31,7 @@ public class Ejercicio6_App {
 		// Muestra espectador 1
 		System.out.println(e2.toString());
 
-		ArrayList<Espectador> espectadores2 = Espectador.generadorEspectadores(5);
+		ArrayList<Espectador> espectadores2 = Espectador.generadorEspectadores(10);
 		Pelicula p2 = new Pelicula("Kill Bill", 90, 1, "Otra persona que no recuerdo su nombre");
 		c1.setPrecio(1);
 		c1.setPelicula(p2);

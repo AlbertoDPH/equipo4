@@ -74,7 +74,8 @@ public class Cine {
 	 *                     para controlar la edadMin
 	 * @return devuleve la matriz con los asientos ocupados
 	 */
-	int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula, double precio) {
+	private int[][] sentarEspectadores(int[][] asientos, ArrayList<Espectador> espectadores, Pelicula pelicula,
+			double precio) {
 		ArrayList<Integer> asienNoUsados = new ArrayList<>();
 
 		// Limpiamos los asientos si hubo una sesion anterior
@@ -121,7 +122,7 @@ public class Cine {
 	}
 
 	// Funcion que resetea los asientos
-	int[][] resetEspectadores(int[][] asientos) {
+	private int[][] resetEspectadores(int[][] asientos) {
 		for (int i = 0; i < FILAS; i++) {
 			for (int j = 0; j < COLUMNAS; j++) {
 				asientos[i][j] = 0;
