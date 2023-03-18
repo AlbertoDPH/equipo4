@@ -1,2 +1,1 @@
-# equipo4
-Ejercicios UD09
+Crear series y juegos, que compartan atributo estanEntregados=true/false mediante una interfaz
