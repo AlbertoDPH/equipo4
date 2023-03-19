@@ -80,7 +80,7 @@ class Estudiante extends Persona {
 		int edadminima = 10;
 		int edadmaxima = 17;
 		Random random = new Random();
-		return random.nextInt(edadmaxima) + edadminima;
+		return random.nextInt((edadmaxima - edadminima) + 1) + edadminima;
 	}
 
 }
