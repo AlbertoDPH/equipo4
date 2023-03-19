@@ -42,9 +42,12 @@ class Profesor extends Persona {
 	}
 
 	@Override
-	public int generadorEdad() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int generadorEdad(int edad) {
+		int edadminima = 25;
+		int edadmaxima = 65;
+		Random random = new Random();
+		edad = random.nextInt(edadmaxima) + edadminima;
+		return edad;
 	}
 
 }

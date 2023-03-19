@@ -106,11 +106,12 @@ class Persona {
 		return nombreRandom;
 	}
 
-	public int generadorEdad() {
+	// Funciones con polimorfismo
+	private int generadorEdad() {
 		return 0;
 	}
 
-	public boolean seAusenta() {
+	private boolean seAusenta() {
 		return false;
 	}
 
