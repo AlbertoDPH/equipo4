@@ -4,6 +4,7 @@ import java.util.Random;
 
 class Persona {
 
+	// Lista de generos disponibles
 	protected final char[] GENEROS_DISPONIBLES = { 'M', 'F' };
 
 	// Atributos
@@ -12,16 +13,60 @@ class Persona {
 	protected char genero;
 
 	// Constructores
+	// Constructor por defecto
 	public Persona() {
 		this.nombre = randomNombre();
-		this.edad = 20;
-		this.genero = 'M';
+		this.edad = 0;
+		this.genero = randomGenero();
 	}
 
+	// Constructor con todos los parametros, validando el genero
 	public Persona(String nombre, int edad, char genero) {
 		super();
 		this.nombre = nombre;
 		this.edad = edad;
+		this.genero = validarGenero(genero);
+	}
+
+	// Constructor solo con edad
+	public Persona(int edad) {
+		super();
+		this.nombre = randomNombre();
+		this.edad = edad;
+		this.genero = randomGenero();
+	}
+
+	// Constructor solo con edad y genero
+	public Persona(int edad, char genero) {
+		super();
+		this.nombre = randomNombre();
+		this.edad = edad;
+		this.genero = validarGenero(genero);
+	}
+
+	// Getters
+	public String getNombre() {
+		return nombre;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public char getGenero() {
+		return genero;
+	}
+
+	// Setters
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public void setGenero(char genero) {
 		this.genero = validarGenero(genero);
 	}
 
@@ -41,6 +86,14 @@ class Persona {
 		return 'M';
 	}
 
+	// Generador de genero aleatorio
+	char randomGenero() {
+		Random rand = new Random();
+		int index = rand.nextInt(GENEROS_DISPONIBLES.length);
+		return GENEROS_DISPONIBLES[index];
+	}
+
+	// Generador de nombre aleatorio
 	String randomNombre() {
 		String[] nombres = { "Gumersindo", "Jose", "Javi", "Alberto", "Maria", "Marta", "Andrea", "Francisco", "Hugo",
 				"Lucas", "Alejandra", "Montserrat" };

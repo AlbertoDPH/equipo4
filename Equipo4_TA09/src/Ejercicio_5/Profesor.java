@@ -1,11 +1,51 @@
 package Ejercicio_5;
 
-class Profesor {
+import java.util.Random;
 
-	private final int PROBABILIDAD_AUSENTE = 20;
+class Profesor extends Persona implements Asistencia {
+
+	private final double PROBABILIDAD_AUSENTE = 0.2; // 20% posibilidades de ausentarse
+	private final String[] MATERIAS = { "MATEMATICAS" };
 
 	// Atributos
-	private boolean ausente = false;
-	private double calificacion;
+	private boolean ausente;
+	private String materiaImpartida;
+
+	// Constructores
+	// Default
+
+	Profesor() {
+		super();
+		this.ausente = seAusenta();
+		this.materiaImpartida = materiaImpartida;
+	}
+
+	Profesor(int edad, char genero) {
+		super(edad, genero);
+		// TODO Auto-generated constructor stub
+	}
+
+	Profesor(int edad) {
+		super(edad);
+		// TODO Auto-generated constructor stub
+	}
+
+	Profesor(String nombre, int edad, char genero) {
+		super(nombre, edad, genero);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public boolean seAusenta() {
+		Random random = new Random();
+		boolean seAusenta = random.nextDouble() < PROBABILIDAD_AUSENTE;
+		return seAusenta;
+	}
+
+	@Override
+	public int generadorEdad() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 
 }
