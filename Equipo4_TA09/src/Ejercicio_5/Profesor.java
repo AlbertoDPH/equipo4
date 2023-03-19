@@ -17,6 +17,7 @@ class Profesor extends Persona {
 		super();
 		this.ausente = seAusenta();
 		this.materiaImpartida = materiaImpartida;
+		this.edad = generadorEdad();
 	}
 
 	Profesor(int edad, char genero) {
@@ -35,19 +36,22 @@ class Profesor extends Persona {
 	}
 
 	@Override
-	public boolean seAusenta() {
+	public String toString() {
+		return "Profesor [ausente=" + ausente + ", materiaImpartida=" + materiaImpartida + ", nombre=" + nombre
+				+ ", edad=" + edad + ", genero=" + genero + "]";
+	}
+
+	private boolean seAusenta() {
 		Random random = new Random();
 		boolean seAusenta = random.nextDouble() < PROBABILIDAD_AUSENTE;
 		return seAusenta;
 	}
 
-	@Override
-	public int generadorEdad(int edad) {
+	private int generadorEdad() {
 		int edadminima = 25;
 		int edadmaxima = 65;
 		Random random = new Random();
-		edad = random.nextInt(edadmaxima) + edadminima;
-		return edad;
+		return random.nextInt(edadmaxima) + edadminima;
 	}
 
 }

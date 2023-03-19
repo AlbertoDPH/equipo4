@@ -2,7 +2,8 @@ package Ejercicio_5;
 
 import java.util.Random;
 
-class Persona {
+// Clase abstracta que no se podra instanciar directamente
+abstract class Persona {
 
 	// Lista de generos disponibles
 	protected final char[] GENEROS_DISPONIBLES = { 'M', 'F' };
@@ -106,7 +107,7 @@ class Persona {
 		return nombreRandom;
 	}
 
-	// Funciones con polimorfismo
+	// Funciones heredadas con polimorfismo
 	private int generadorEdad() {
 		return 0;
 	}

@@ -3,13 +3,21 @@ package Ejercicio_5;
 class Aula {
 
 	// Atributos
-	private int identificador = 0;
+	private int identificador;
 	private Estudiante[] estudiantes;
 	private Profesor profesor;
-	
-	Aula (Estudiante[] estudiantes, Profesor profesor){
-		this.identificador=identificador++;
+
+	Aula() {
+		this.identificador = identificador++;
 	}
-	
+
+	Aula(Estudiante[] estudiantes, Profesor profesor) {
+		this.identificador = identificador++;
+	}
+
+	@Override
+	public String toString() {
+		return "Aula [identificador=" + identificador + "]";
+	}
 
 }
