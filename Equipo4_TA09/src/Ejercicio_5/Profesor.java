@@ -2,7 +2,7 @@ package Ejercicio_5;
 
 import java.util.Random;
 
-class Profesor extends Persona implements Asistencia {
+class Profesor extends Persona {
 
 	private final double PROBABILIDAD_AUSENTE = 0.2; // 20% posibilidades de ausentarse
 	private final String[] MATERIAS = { "MATEMATICAS" };
@@ -13,7 +13,6 @@ class Profesor extends Persona implements Asistencia {
 
 	// Constructores
 	// Default
-
 	Profesor() {
 		super();
 		this.ausente = seAusenta();

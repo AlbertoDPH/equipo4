@@ -106,4 +106,12 @@ class Persona {
 		return nombreRandom;
 	}
 
+	public int generadorEdad() {
+		return 0;
+	}
+
+	public boolean seAusenta() {
+		return false;
+	}
+
 }
