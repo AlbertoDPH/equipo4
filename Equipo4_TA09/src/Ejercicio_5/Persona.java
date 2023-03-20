@@ -23,7 +23,6 @@ abstract class Persona {
 
 	// Constructor con todos los parametros, validando el genero
 	public Persona(String nombre, int edad, char genero) {
-		super();
 		this.nombre = nombre;
 		this.edad = edad;
 		this.genero = validarGenero(genero);
@@ -31,7 +30,6 @@ abstract class Persona {
 
 	// Constructor solo con edad
 	public Persona(int edad) {
-		super();
 		this.nombre = randomNombre();
 		this.edad = edad;
 		this.genero = randomGenero();
@@ -39,7 +37,6 @@ abstract class Persona {
 
 	// Constructor solo con edad y genero
 	public Persona(int edad, char genero) {
-		super();
 		this.nombre = randomNombre();
 		this.edad = edad;
 		this.genero = validarGenero(genero);

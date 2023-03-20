@@ -5,8 +5,6 @@ import java.util.Random;
 class Profesor extends Persona {
 
 	private final double PROBABILIDAD_AUSENTE = 0.2; // 20% posibilidades de ausentarse
-	private final String[] MATERIAS = { "MATEMATICAS", "FILOSOFIA", "FISICA" };
-	private final String MATERIA_DEFAULT = "MATEMATICAS";
 
 	// Atributos
 	private boolean ausente;
@@ -21,17 +19,19 @@ class Profesor extends Persona {
 		this.edad = generadorEdad();
 	}
 
+	// Constructor con materia
 	Profesor(String materiaImpartida) {
 		super();
 		this.ausente = seAusenta();
-		this.materiaImpartida = validadorDeMateria(materiaImpartida);
+		this.materiaImpartida = aulaUtils.validadorDeMateria(materiaImpartida);
 		this.edad = generadorEdad();
 	}
 
+	// Constructor con todos los campos
 	Profesor(String nombre, int edad, char genero, String materiaImpartida) {
 		super(nombre, edad, genero);
 		this.ausente = seAusenta();
-		this.materiaImpartida = validadorDeMateria(materiaImpartida);
+		this.materiaImpartida = aulaUtils.validadorDeMateria(materiaImpartida);
 	}
 
 	@Override
@@ -45,9 +45,17 @@ class Profesor extends Persona {
 		return materiaImpartida;
 	}
 
+	public boolean isAusente() {
+		return ausente;
+	}
+
 	// Setters
 	public void setMateriaImpartida(String materiaImpartida) {
-		this.materiaImpartida = validadorDeMateria(materiaImpartida);
+		this.materiaImpartida = aulaUtils.validadorDeMateria(materiaImpartida);
+	}
+
+	public void setAusente(boolean ausente) {
+		this.ausente = ausente;
 	}
 
 	// Genera si el profesor se ausenta con un 20% de probabilidades
@@ -65,22 +73,11 @@ class Profesor extends Persona {
 		return random.nextInt((edadmaxima - edadminima) + 1) + edadminima;
 	}
 
-	// Funcion que comprueba que la materia introducida sea valida
-	private String validadorDeMateria(String materia) {
-		materia.toUpperCase();
-		for (String m : MATERIAS) {
-			if (materia.equals(m)) {
-				return materia;
-			}
-		}
-		return MATERIA_DEFAULT;
-	}
-
 	// Funcion que asigna materia aleatoria
 	private String asignadorMateriaAleatorio() {
 		Random rand = new Random();
-		int index = rand.nextInt(MATERIAS.length);
-		return MATERIAS[index];
+		int index = rand.nextInt(aulaUtils.MATERIAS.length);
+		return aulaUtils.MATERIAS[index];
 	}
 
 }

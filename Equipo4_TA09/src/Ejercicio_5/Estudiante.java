@@ -1,5 +1,6 @@
 package Ejercicio_5;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 class Estudiante extends Persona {
@@ -81,6 +82,17 @@ class Estudiante extends Persona {
 		int edadmaxima = 17;
 		Random random = new Random();
 		return random.nextInt((edadmaxima - edadminima) + 1) + edadminima;
+	}
+
+	// Generador de espectadores, devolviendo una arraylist con tantos espectadores
+	// como se especifique
+	public static ArrayList<Estudiante> generadorEstudiantes(int n) {
+		ArrayList<Estudiante> estudiantes = new ArrayList<>();
+		for (int i = 0; i < n; i++) {
+			Estudiante estudiante = new Estudiante();
+			estudiantes.add(estudiante);
+		}
+		return estudiantes;
 	}
 
 }

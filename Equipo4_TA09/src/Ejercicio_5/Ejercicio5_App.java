@@ -1,35 +1,32 @@
 package Ejercicio_5;
 
+import java.util.ArrayList;
+
 class Ejercicio5_App {
 
 	public static void main(String[] args) {
-		Estudiante e1 = new Estudiante();
-		Estudiante e2 = new Estudiante();
-		Estudiante e3 = new Estudiante();
 
-		System.out.println(e1.toString());
-		System.out.println(e2.toString());
-		System.out.println(e3.toString());
+		// Genero estudiantes aleatorios
+		ArrayList<Estudiante> estudiantes = Estudiante.generadorEstudiantes(24);
 
+		// Genero 3 profesores aleatorios
 		Profesor p1 = new Profesor();
 		Profesor p2 = new Profesor();
 		Profesor p3 = new Profesor();
-		Profesor p4 = new Profesor();
-		Profesor p5 = new Profesor();
 
+		// Compruebo profesores
 		System.out.println(p1.toString());
 		System.out.println(p2.toString());
 		System.out.println(p3.toString());
-		System.out.println(p4.toString());
-		System.out.println(p5.toString());
 
-		Aula a1 = new Aula();
-		Aula a2 = new Aula();
+		// Creo aula 1 con profesor 1, estudiantes y asignatura matematicas
+		Aula a1 = new Aula(p1, estudiantes, "matematicas");
+
+		// Muestro informacion del aula
 		System.out.println(a1.toString());
-		System.out.println(a2.toString());
 
-		Estudiante e4 = new Estudiante("Gumersindo", 23, 'M', 69);
-		System.out.println(e4.toString());
+		// Muestro aprobados
+		a1.mostrarAprobados(a1);
 
 	}
 
