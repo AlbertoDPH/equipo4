@@ -36,8 +36,11 @@ public class Serie extends Entregable{
 		this.creator = creator;
 	}
 
-	@Override
+	//ToString
 	public String toString() {
-		return "Serie [seasons=" + seasons + ", creator=" + creator + "]";
+		return "Serie [Title=" + getTitle() + ", seasons=" + seasons + ", gender=" + getGender() + ", creator="
+				+ creator + "]";
 	}
+
+	
 }

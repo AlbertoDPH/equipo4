@@ -47,4 +47,17 @@ public class Entregable {
 	public String toString() {
 		return "Entregable [title=" + title + ", delivered=" + delivered + ", gender=" + gender + "]";
 	}
+	
+	//Methods
+	public void deliver() {
+		this.delivered = true;
+	}
+	
+	public void returner() {
+		this.delivered = false;
+	}
+	
+	public boolean isDelivered() {
+		return this.delivered;
+	}
 }
