@@ -5,7 +5,7 @@ public class Ejercicio2_App {
 	public static void main(String[] args) {
 		
 		//Crate serie
-		Serie s = new Serie("Game of Thones", 8, false, "Action", "HBO");
+		Serie s = new Serie("Game of Thones", 8, "Action", "HBO");
 		System.out.println(s.toString());
 		
 		//See if it is delivered
@@ -18,6 +18,11 @@ public class Ejercicio2_App {
 		//Change delivered to false and print result
 		s.returner();
 		System.out.println("Returned to false: " + s.isDelivered());
+		
+		
+		//Create videogame
+		Videojuego v = new Videojuego("Valorant", 30.5, "Shooter", "Riot Games");
+		System.out.println(v.toString());
 	}
 
 }

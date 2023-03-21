@@ -13,7 +13,7 @@ public class Serie extends Entregable{
 		this.creator = creator;		
 	}
 	
-	public Serie(String title, int seasons, boolean delivered, String gender, String creator) {	
+	public Serie(String title, int seasons, String gender, String creator) {	
 		super(title, gender);
 		this.seasons = seasons;
 		this.creator = creator;		

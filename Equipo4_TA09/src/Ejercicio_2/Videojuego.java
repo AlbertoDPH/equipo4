@@ -42,8 +42,8 @@ public class Videojuego extends Entregable {
 		this.company = company;
 	}
 
-	@Override
+	//ToString
 	public String toString() {
-		return "Videojuego [estimated_hours=" + estimated_hours + ", company=" + company + "]";
+		return "Videojuego [title=" + getTitle() + ", estimated hours=" + estimated_hours + ", gender=" + getGender() + ", company=" + company + "]";
 	}
 }
