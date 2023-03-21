@@ -41,6 +41,16 @@ public class Serie extends Entregable{
 		return "Serie [Title=" + getTitle() + ", seasons=" + seasons + ", gender=" + getGender() + ", creator="
 				+ creator + "]";
 	}
-
+	
+	//Method
+	public int compareTo(Videojuego v) {
+		if( this.seasons < v.getEstimated_hours()) {
+			return -1;
+		} else if ( this.seasons == v.getEstimated_hours()) {
+			return 0;
+		} else {
+			return 1;
+		}
+	}
 	
 }
