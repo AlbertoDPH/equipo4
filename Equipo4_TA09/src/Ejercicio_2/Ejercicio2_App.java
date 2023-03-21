@@ -20,6 +20,33 @@ public class Ejercicio2_App {
 		v[3] = new Videojuego("Star wars: Jedi survivor", 0, "ARPG", "EA");
 		v[4] = new Videojuego("Minecraft", 8, "Sandbox", "Mojang");
 		
+		//Delivery of some series and videogames
+		s[1].deliver();
+		s[3].deliver();
+		v[0].deliver();
+		v[2].deliver();
+		v[4].deliver();
+		
+		//Filter delivered and count them
+		System.out.println("Total: " + filterDelivered(s, v));
+	}
+	
+	public static int filterDelivered(Serie[] s, Videojuego[] v) {		
+		int c = 0;
+		System.out.println("Series y videojuegos entregados:");
+		for(Serie serie : s) {
+			if(serie.isDelivered() == true) {
+				c++;
+				System.out.println(serie.toString());
+			}
+		}
+		for(Videojuego videojuego : v) {
+			if(videojuego.isDelivered() == true) {
+				c++;
+				System.out.println(videojuego.toString());
+			}
+		}		
+		return c;
 	}
 
 }

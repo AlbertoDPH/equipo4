@@ -3,6 +3,8 @@ package Ejercicio_2;
 public class Entregable {
 	
 	//Attributes
+	private static int cont = 0;
+	
 	private String title;
 	private boolean delivered;
 	private String gender;
