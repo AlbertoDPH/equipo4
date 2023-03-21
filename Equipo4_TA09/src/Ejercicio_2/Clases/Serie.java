@@ -1,4 +1,4 @@
-package Ejercicio_2;
+package Ejercicio_2.Clases;
 
 public class Serie extends Entregable{
 

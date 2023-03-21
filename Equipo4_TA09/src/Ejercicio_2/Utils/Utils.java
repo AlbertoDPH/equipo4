@@ -1,4 +1,6 @@
-package Ejercicio_2;
+package Ejercicio_2.Utils;
+
+import Ejercicio_2.Clases.*;
 
 public class Utils {
 	

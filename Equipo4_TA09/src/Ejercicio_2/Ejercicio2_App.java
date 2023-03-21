@@ -1,5 +1,8 @@
 package Ejercicio_2;
 
+import Ejercicio_2.Clases.*;
+import Ejercicio_2.Utils.Utils;
+
 public class Ejercicio2_App {
 
 	public static void main(String[] args) {
