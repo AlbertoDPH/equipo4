@@ -36,4 +36,25 @@ public class Utils {
 		}		
 		return c;
 	}
+	
+	public static void showMost(Serie[] s, Videojuego[] v) {
+		
+		Serie ms = new Serie("" , "", null);
+		
+		for(Serie serie : s) {
+			if(serie.getSeasons() > ms.getSeasons()) {
+				ms = serie;
+			}
+		}
+		System.out.println("Serie con más temporadas: " + ms.toString());
+		
+		Videojuego mv = new Videojuego();
+		
+		for(Videojuego videojuego : v) {
+			if(videojuego.getEstimated_hours() > mv.getEstimated_hours()) {
+				mv = videojuego;
+			}
+		}	
+		System.out.println("Videojuego con más horas: " + mv.toString());
+	}
 }

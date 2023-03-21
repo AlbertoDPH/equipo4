@@ -22,5 +22,8 @@ public class Ejercicio2_App {
 		
 		//Filter delivered and count them
 		System.out.println("Total: " + Utils.filterDelivered(s, v));
+		
+		//Print maximun hours and seasons
+		Utils.showMost(s, v);
 	}
 }
