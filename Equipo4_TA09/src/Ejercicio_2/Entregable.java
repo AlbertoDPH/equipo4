@@ -13,6 +13,18 @@ public class Entregable {
 		this.delivered = false;
 		this.gender = "Default gender";
 	}
+	
+	public Entregable(String title) {
+		this.title = title;
+		this.delivered = false;
+		this.gender = "Default gender";
+	}
+	
+	public Entregable(String title, String gender) {
+		this.title = title;
+		this.delivered = false;
+		this.gender = gender;
+	}
 
 	//Setters & getters
 	public String getTitle() {
@@ -35,7 +47,4 @@ public class Entregable {
 	public String toString() {
 		return "Entregable [title=" + title + ", delivered=" + delivered + ", gender=" + gender + "]";
 	}
-	
-	
-	
 }
