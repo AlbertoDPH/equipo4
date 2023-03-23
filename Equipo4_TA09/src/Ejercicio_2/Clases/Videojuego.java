@@ -2,11 +2,11 @@ package Ejercicio_2.Clases;
 
 public class Videojuego extends Entregable {
 
-	//Attributes
+	// Attributes
 	private double estimated_hours;
 	private String company;
-	
-	//Contructors
+
+	// Contructors
 	public Videojuego() {
 		super();
 		this.estimated_hours = 0;
@@ -18,14 +18,14 @@ public class Videojuego extends Entregable {
 		this.estimated_hours = estimated_hours;
 		this.company = "Default company";
 	}
-	
+
 	public Videojuego(String title, double estimated_hours, String gender, String company) {
 		super(title, gender);
 		this.estimated_hours = estimated_hours;
 		this.company = company;
 	}
 
-	//Setters & getters
+	// Setters & getters
 	public double getEstimated_hours() {
 		return estimated_hours;
 	}
@@ -42,8 +42,9 @@ public class Videojuego extends Entregable {
 		this.company = company;
 	}
 
-	//ToString
+	// ToString
 	public String toString() {
-		return "Videojuego [title=" + getTitle() + ", estimated hours=" + estimated_hours + ", gender=" + getGender() + ", company=" + company + "]";
+		return "Videojuego con titulo: " + getTitle() + ", horas de gameplay aproximadas " + estimated_hours
+				+ ", genero " + getGender() + " y desarrolado por " + company + ".";
 	}
 }

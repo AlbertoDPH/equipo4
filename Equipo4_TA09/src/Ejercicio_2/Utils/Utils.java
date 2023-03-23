@@ -4,6 +4,7 @@ import Ejercicio_2.Clases.*;
 
 public class Utils {
 	
+	//Fills array with series and videogames
 	public static void loadArray(Serie[] s, Videojuego[] v) {
 		
 		s[0] = new Serie("Game of Thrones", 8, "Action", "HBO");
@@ -19,6 +20,7 @@ public class Utils {
 		v[4] = new Videojuego("Minecraft", 8, "Sandbox", "Mojang");
 	}
 	
+	//Counts and shows delivered series and videogames
 	public static int filterDelivered(Serie[] s, Videojuego[] v) {		
 		int c = 0;
 		System.out.println("Series y videojuegos entregados:");
@@ -37,6 +39,8 @@ public class Utils {
 		return c;
 	}
 	
+	// Compares shows and videogames and shows which one has the highest
+	// ammount of seasons/hours of gameplay
 	public static void showMost(Serie[] s, Videojuego[] v) {
 		
 		Serie ms = new Serie("" , "", null);
