@@ -91,12 +91,13 @@ public class Espectador {
 	}
 
 	// Generador de Dinero aleatorio
+
 	private double generadorDinero() { // Generador de dinero aleatorio, entre 0 y 20
 		double min = 0;
 		double max = 20;
 		Random dineroRandom = new Random();
 
-		double dinero = dineroRandom.nextDouble((max - min) + 1) + min;
+		double dinero = min + (dineroRandom.nextDouble() * (max - min));
 		dinero = Math.round(dinero * 100.0) / 100.0; // Redondea el resultado a 2 decimales
 		return dinero;
 	}
